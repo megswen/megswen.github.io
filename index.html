@@ -1,31 +1,60 @@
-<!-- Reset.css -->
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang=en>
+    <head>
+        <!--Adding Reset CSS-->
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <!--Adding CSS-->
+        <link rel="stylesheet" href="assets/css/style.css">
 
-  <head>
+        <title>Trivia Game</title>
+    </head>
+    <body>
+        <div class="main">
+            <div class="container">
+                <h1>Photography Trivia Game</h1>
 
-    <meta charset="UTF-8">
-    <title>Example Page</title>
+                <div class="timer">Time remaining: <span id="time">02:00</span></div>
+                
+                <div class="question-box">
+                    <p>An f22 aperture is larger than an f4 aperture.</p><br>
+                    <form>
+                    <input type="radio" name="first-question" value="Wrong"> True
+                    <input type="radio" name="first-question" value="Right"> False
+                    </form>
 
-    <link rel="stylesheet" href="reset.css">
-    
-  </head>
+                    <p>A full frame has a wider view than a crop sensor.</p><br>
+                    <form>
+                    <input type="radio" name="second-question" value="Right"> True
+                    <input type="radio" name="second-question" value="Wrong"> False
+                    </form>
 
-  <body>
+                    <p>ISO 1600 is more sensitive to light than ISO 200.</p><br>
+                    <form>
+                    <input type="radio" name="third-question" value="Right"> True
+                    <input type="radio" name="third-question" value="Wrong"> False
+                    </form>
 
-  <h1>This is a header 1</h1>
+                    <p>1/60th of a second is a good shutter speed when using a 50mm lens.</p><br>
+                    <form>
+                    <input type="radio" name="fourth-question" value="Wrong"> True
+                    <input type="radio" name="fourth-question" value="Right"> False
+                    </form>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus labore ut, eum! Repellat, beatae dolorem minus sapiente iste nihil explicabo impedit eos consequuntur illum corporis autem vitae cum aperiam mollitia.</p>
+                    <button id="submit-button">Submit!</button>
+                </div>
 
-  <h2>This is a header 2</h2>
+                <div id="results">Results:
+                    <p id="correctanswers-text"></p>
+                    <p id="wronganswers-text"></p>
+                    <p id="unanswered-text"></p>
+                    <button id="restart-button">Restart!</button>
+                </div>
+            </div>
+        </div>
 
-  <ul>
-    <li>Test</li>
-    <li>Test</li>
-    <li>Test</li>
-    <li>Test</li>
-  </ul>
-
-  </body>
-
+        <!--Adding jQuery-->
+        <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <!--Adding Javascript-->
+        <script src="assets/javascript/app.js"></script>
+    </body>
 </html>
