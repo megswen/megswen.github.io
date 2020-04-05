@@ -1,96 +1,65 @@
-// Set a var for the Interval
-var timerInterval;
+// Create a "topics" array of different kinds of topics
+var topics = ["The Office", "Parks and Rec", "Rick and Morty", "That 70's Show", "Breaking Bad", "Seinfeld", "Hey Arnold", "Sponge Bob"];
 
-// When the page loads, start a countdown timer of 2 minutes and display it on the html
-// Function to start the timer counting backwards, decreasing by 1 every second
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    timerInterval = setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.text(minutes + ":" + seconds);
-
-        if (--timer < 0) {
-            getTheScore();
-        }
-    }, 1000);
-}
-
-// Create a var to have the timer run for two minutes
-var twoMinutes;
-
-// When page loads, start a countdown timer of 2 minutes
-$(document).ready(function(){
-    twoMinutes = 60 * 2,
-        display = $('#time');
-    startTimer(twoMinutes, display);
-});
-
-// Create global vars to hold the user's correct, wrong, and unanswered results
-var correct = 0;
-var wrong = 0;
-var unanswered = 0;
-
-// Create global vars to reference the results text on the html
-var correctAnswersText = $("#correctanswers-text");
-var wrongAnswersText = $("#wronganswers-text");
-var unansweredText = $("#unanswered-text");
-
-// Function to get the score
-function getTheScore() {
-    // Vars to hold the score
-    correct = 0;
-    wrong = 0;
-    unanswered = 0;
-    // Stop the timer
-    clearInterval(timerInterval);
-    // Object referencing the question names on the html
-    var questionNames = [
-        "first-question",
-        "second-question",
-        "third-question",
-        "fourth-question"
-    ]
-    // For loop grabbing the question names and determining the correct answer for each question and adding the scores together
-    for (name of questionNames) {
-        var answer = $('input[name="' + name + '"]:checked').val();
-        if (answer === "Right") {
-            correct++;
-        } else if (answer === "Wrong") {
-            wrong++;
-        } else {
-            unanswered++;
-        }
+// Function to create buttons for each item in the topics array and displays them in the #button-box div
+function renderButtons() {
+    for (var i = 0; i < topics.length; i++) {
+        button = $('<button>'+ topics[i] + '</button>');
+        $(button).appendTo("#button-box");
+        button.addClass("tvshows");
+        button.attr("data-name", topics[i]);
     }
-    // Display the score on the page
-    correctAnswersText.text("Correct answers: " + correct);
-    wrongAnswersText.text("Wrong answers: " + wrong);
-    unansweredText.text("Unanswered questions: " + unanswered);
 }
 
-// When you hit the submit button, the getTheScore function is called
-$("#submit-button").click(function() {
-    getTheScore();
-});
+renderButtons();
 
-// Create a function to restart the game
-function restart() {
-    startTimer(twoMinutes, display);
-    twoMinutes = 60 * 2;
-    correct = 0;
-    wrong = 0;
-    unanswered = 0;
-    correctAnswersText.text("Correct answers: " + correct);
-    wrongAnswersText.text("Wrong answers: " + wrong);
-    unansweredText.text("Unanswered questions: " + unanswered);
-    $('input[type="radio"]').prop('checked', false);
-};
+// On click function that retreives the top 10 gifs for the button that was clicked
+$(".tvshows").click(function() {
+    var tvShows = $(this).attr("data-name");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + tvShows + "&api_key=brAL4zu8mGOUouJNI30dQQ68Zaji8rFY&limit=10";
 
-// Calling the restart function so when you hit the restart button, the game resets
-$("#restart-button").click(function() {
-    restart();
+    // AJAX call to get the gif data
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+
+        // Create a var called results and set it equal to response.data
+        var results = response.data;
+        console.log(results);
+
+        // For loop for the results
+        for (var x = 0; x < results.length; x++) {
+            // Create a div and store it in a var called topicsDiv and put the image and rating into that div
+            var topicsDiv = $("<div>");
+            var rating = $("<p>").text("Rating: " + results[x].rating);
+            var topicsImage = $("<img>");
+            topicsImage.attr("src", results[x].images.original.url);
+            topicsImage.attr("data-still", results[x].images.original_still.url);
+            topicsImage.attr("data-animate", results[x].images.original.url);
+            topicsImage.attr("data-state", "still");
+            topicsImage.addClass("gif");
+            topicsDiv.append(rating);
+            topicsDiv.append(topicsImage);
+            $("#gifreturn-box").prepend(topicsDiv);
+        }
+
+        // On click function to start and stop the animation of the gifs
+        $(".gif").on("click", function() {
+            var state = $(this).attr("data-state");
+            var still = $(this).attr("data-still");
+            var animate = $(this).attr("data-animate");
+            if (state === still) {
+                state = animate;
+                console.log("animate");
+                $(this).attr("src", animate);
+                $(this).attr("data-state", state);
+            } else {
+                state = still;
+                console.log("still");
+                $(this).attr("src", still);
+                $(this).attr("data-state", state);
+            }
+        });
+    });
 });

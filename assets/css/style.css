@@ -1,64 +1,45 @@
-html, body {
-    height: 100%;
-    width: 100%;
-}
-
-.main {
-    background-image: url("../images/cameras-black-background_23-2147852501.jpg");
-    height: 100%;
-    background-size: cover;
-}
-
-.container {
-    background-color: white;
-    margin: auto;
-    width: 500px;
-    height: 100%;
+.jumbotron {
     text-align: center;
-    padding: 20px;
-    margin-bottom: 20px;
+    background-color: rgb(92, 168, 149);
+    height: 200px;
+    font-size: 80px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
 }
 
-h1 {
-    margin: 20px;
+.instructions {
+    text-align: center;
     font-size: 30px;
-}
-
-.timer {
-    margin: 10px;
-}
-
-.question-box {
-    border: 1px solid black;
-    padding: 10px;
-}
-
-p {
-    margin-top: 20px;
-    margin-bottom: -10px;
-}
-
-form {
-    margin: 5px;
-    margin-bottom: 30px;
-}
-
-input {
-    margin: 0px 5px 0px 5px;
+    margin: 20px;
+    color: gray;
+    font-family: 'Roboto', sans-serif;
 }
 
 button {
-    margin-top: 10px;
-    margin-bottom: 20px;
+    background-color: rgb(37, 53, 61);
+    border: none;
 }
 
-#results {
-    border: 1px solid black;
-    margin-top: 20px;
-    height: 150px;
-    padding: 20px;
+.tvshows {
+    margin: 10px;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
 }
 
-#restart-button {
-    margin-top: 30px;
+p {
+    text-align: center;
+    color: gray;
+}
+
+.gif {
+    margin: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+
+img {
+    margin: auto;
 }

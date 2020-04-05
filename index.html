@@ -1,60 +1,36 @@
 <!DOCTYPE html>
 <html lang=en>
-    <head>
-        <!--Adding Reset CSS-->
-        <link rel="stylesheet" href="assets/css/reset.css">
-        <!--Adding CSS-->
-        <link rel="stylesheet" href="assets/css/style.css">
+<head>
+    <!--Adding Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--Adding reset CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Adding style CSS-->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 
-        <title>Trivia Game</title>
-    </head>
-    <body>
-        <div class="main">
-            <div class="container">
-                <h1>Photography Trivia Game</h1>
+    <title>Giphy APIs</title>
+</head>
+<body>
+    
+    <h1 class="jumbotron">TV Show Gifs!</h1>
 
-                <div class="timer">Time remaining: <span id="time">02:00</span></div>
-                
-                <div class="question-box">
-                    <p>An f22 aperture is larger than an f4 aperture.</p><br>
-                    <form>
-                    <input type="radio" name="first-question" value="Wrong"> True
-                    <input type="radio" name="first-question" value="Right"> False
-                    </form>
+    <div class="col-lg-8 mx-auto">
+        <div class="instructions">Click on a button to see the gifs!</div>
 
-                    <p>A full frame has a wider view than a crop sensor.</p><br>
-                    <form>
-                    <input type="radio" name="second-question" value="Right"> True
-                    <input type="radio" name="second-question" value="Wrong"> False
-                    </form>
+        <!--Buttons will go here--> 
+        <div id="button-box"></div>
+    </div>
+    <div class="col-lg-4 mx-auto">
+        <!--Gifs will be dumped here-->
+        <div id="gifreturn-box"></div>
+    </div>
+    
 
-                    <p>ISO 1600 is more sensitive to light than ISO 200.</p><br>
-                    <form>
-                    <input type="radio" name="third-question" value="Right"> True
-                    <input type="radio" name="third-question" value="Wrong"> False
-                    </form>
-
-                    <p>1/60th of a second is a good shutter speed when using a 50mm lens.</p><br>
-                    <form>
-                    <input type="radio" name="fourth-question" value="Wrong"> True
-                    <input type="radio" name="fourth-question" value="Right"> False
-                    </form>
-
-                    <button id="submit-button">Submit!</button>
-                </div>
-
-                <div id="results">Results:
-                    <p id="correctanswers-text"></p>
-                    <p id="wronganswers-text"></p>
-                    <p id="unanswered-text"></p>
-                    <button id="restart-button">Restart!</button>
-                </div>
-            </div>
-        </div>
-
-        <!--Adding jQuery-->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <!--Adding Javascript-->
-        <script src="assets/javascript/app.js"></script>
-    </body>
+    <!--Adding jQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--Adding Javascript-->
+    <script src="assets/javascript/app.js"></script>
+</body>
 </html>
