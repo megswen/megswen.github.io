@@ -1,36 +1,87 @@
 <!DOCTYPE html>
 <html lang=en>
-<head>
-    <!--Adding Bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!--Adding reset CSS-->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!--Adding style CSS-->
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <!--Google fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 
-    <title>Giphy APIs</title>
+<head>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--Reset CSS-->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <!--Style CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <!-- Firebase References -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+    <title>Train Station</title>
+
 </head>
 <body>
-    
-    <h1 class="jumbotron">TV Show Gifs!</h1>
 
-    <div class="col-lg-8 mx-auto">
-        <div class="instructions">Click on a button to see the gifs!</div>
+    <div class="main">
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">Train Station</div>
+                </div>
+            </div>
+        </div>
 
-        <!--Buttons will go here--> 
-        <div id="button-box"></div>
+        <div class="row justify-content-md-center">
+            <div class="col-lg-10">
+                <div class="card card-default">
+                    <div class="card-header">Train Schedule</div>
+                    <table class="table" id="train-table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency (min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Insert additional train rows here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">   
+            <div class="col-lg-10">
+                <div class="card card-default">
+                    <div class="card-header">Add a Train</div>
+                    <form>
+                        <div class="add-train-form">
+                            <label for="input-train-name">Train Name</label>
+                            <input type="text" class="form-control" id="name-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-destination">Destination</label>
+                            <input type="text" class="form-control" id="destination-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-train-time">Time First Train Leaves (military time)</label>
+                            <input type="time" class="form-control" id="time-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-frequency">Frequency (min)</label>
+                            <input type="number" class="form-control" id="frequency-input">
+                        </div>
+                        <button type="submit" class="btn mx-auto d-block" id ="submit-button">Add my Train!</button>
+                    </form>
+                </div>
+            </div>
+        </div> 
     </div>
-    <div class="col-lg-4 mx-auto">
-        <!--Gifs will be dumped here-->
-        <div id="gifreturn-box"></div>
-    </div>
-    
 
-    <!--Adding jQuery-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <!--Adding Javascript-->
-    <script src="assets/javascript/app.js"></script>
+<!--Moment JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!--Javascript-->
+<script src="assets/javascript/logic.js"></script>
 </body>
 </html>

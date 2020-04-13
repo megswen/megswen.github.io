@@ -1,45 +1,51 @@
+.main {
+    background-image: url("../images/maxresdefault.jpg");
+}
+
 .jumbotron {
+    background-size: cover;
+    background: rgba(0,0,0, 0.5);
+}
+
+.container {
     text-align: center;
-    background-color: rgb(92, 168, 149);
-    height: 200px;
+    color: rgb(235, 235, 235);
     font-size: 80px;
-    color: white;
-    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+    font-family: 'Roboto Slab', serif;
 }
 
-.instructions {
-    text-align: center;
-    font-size: 30px;
+.card {
     margin: 20px;
-    color: gray;
-    font-family: 'Roboto', sans-serif;
+    border: 1px solid rgb(65, 64, 64);
 }
 
-button {
-    background-color: rgb(37, 53, 61);
-    border: none;
-}
-
-.tvshows {
-    margin: 10px;
-    border-radius: 4px;
-    padding: 3px;
-    color: white;
-    padding: 5px;
-    font-size: 15px;
-    font-family: 'Roboto', sans-serif;
-}
-
-p {
+.card-header {
     text-align: center;
-    color: gray;
+    background-color: rgb(27, 107, 131);
+    color: white;
+    font-family: 'Roboto Slab', serif;
 }
 
-.gif {
-    margin: 40px;
-    font-family: 'Roboto', sans-serif;
+thead, tbody {
+    font-family: 'Roboto Slab', serif;
 }
 
-img {
-    margin: auto;
+form {
+    padding: 20px;
+    font-family: 'Roboto Slab', serif;
+}
+
+label {
+    margin: 10px 0px 5px 0px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.btn {
+    text-align: center;
+    background-color: rgb(27, 107, 131);
+    border: none;
+    color: white;
+    font-family: 'Roboto Slab', serif;
 }
