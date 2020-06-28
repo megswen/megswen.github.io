@@ -1,51 +1,276 @@
-.main {
-    background-image: url("../images/maxresdefault.jpg");
+/* Home page */
+body, html {
+    height: 100%;
 }
 
-.jumbotron {
+.home-page {
+    background-image: url("../images/home-page.jpeg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-    background: rgba(0,0,0, 0.5);
 }
 
-.container {
-    text-align: center;
-    color: rgb(235, 235, 235);
-    font-size: 80px;
-    font-weight: bold;
-    text-shadow: 1px 1px black;
-    font-family: 'Roboto Slab', serif;
+.hp-left-box {
+    border-right: 2px solid white;
+    margin: 30px 0px 30px 30px;
+    height: 650px;
 }
 
-.card {
-    margin: 20px;
-    border: 1px solid rgb(65, 64, 64);
-}
-
-.card-header {
-    text-align: center;
-    background-color: rgb(27, 107, 131);
+.hp-name-header {
     color: white;
-    font-family: 'Roboto Slab', serif;
-}
-
-thead, tbody {
-    font-family: 'Roboto Slab', serif;
-}
-
-form {
-    padding: 20px;
-    font-family: 'Roboto Slab', serif;
-}
-
-label {
-    margin: 10px 0px 5px 0px;
-    font-family: 'Roboto Slab', serif;
-}
-
-.btn {
     text-align: center;
-    background-color: rgb(27, 107, 131);
-    border: none;
+    font-size: 70px;
+    padding: 10px;
+    padding-top: 50px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.hp-title-header {
     color: white;
-    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    margin-top: -30px;
+    margin-bottom: 60px;
+    font-family: 'Yantramanav', sans-serif;
+    letter-spacing: 3px;
+    font-weight: lighter;
+}
+
+.hp-profile-img:hover {
+    filter: grayscale(100%);
+}
+
+.hp-right-box {
+    border-left: 2px solid white;
+    margin: 30px 30px 30px 0px;
+    height: 650px;
+}
+
+.hp-text-box {
+    color: white;
+    font-family: 'Yantramanav', sans-serif;
+    padding: 50px;
+    text-align: center;
+}
+
+.hp-p {
+    padding-top: 30px;
+}
+
+.hp-btn-text-center {
+    text-align: center;
+}
+
+.hp-button {
+    background-color: rgb(194, 164, 164);
+    color: white;
+    font-family: 'Yantramanav', sans-serif;
+    border-radius: none;
+}
+
+.hp-button:active,
+.hp-button:focus,
+.hp-button:focus:active {
+    box-shadow: none;
+}
+
+/* Jumbotron */
+.jumbotron {
+    background-image: url("../images/moody-plant.jpeg");
+    border-radius: 0px;
+    margin-bottom: 0px;
+    height: 400px;
+}
+
+.header-box {
+    border: 12px double white;
+    margin: 20px 140px 45px 140px;
+}
+
+.name-header {
+    color: white;
+    text-align: center;
+    font-size: 130px;
+    padding: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.title-header {
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    margin-top: -30px;
+    font-family: 'Yantramanav', sans-serif;
+    letter-spacing: 3px;
+    font-weight: lighter;
+}
+
+/* Navbar */
+.navbar {
+    background-color: white;
+    margin-bottom: 60px;
+    box-shadow: 0px 2px 5px lightgray;
+    position: sticky;
+}
+
+.navbar-items {
+    margin-left: 140px;
+    margin-right: 140px;
+}
+
+.nav-link {
+    font-size: 20px;
+    font-family: 'Yantramanav', sans-serif;
+}
+
+.resume-button {
+    background-color: rgb(194, 164, 164);
+    color: white;
+    font-family: 'Yantramanav', sans-serif;
+    float: right;
+    margin-right: 0px;
+    box-shadow: 1px 1px 5px grey;
+    float: right;
+}
+
+/* Page header and page container */
+.page-header {
+    background-color: rgb(39, 39, 39);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    float: none;
+    margin: 0 auto;
+    color: white;
+    margin-bottom: -100px;
+    font-size: 45px;
+    display: flex;
+    padding: 63px;
+    font-family: 'Roboto Condensed', sans-serif;
+    box-shadow: 3px 3px 5px grey;
+}
+
+.home-page-header {
+    font-size: 35px;
+    padding-top: 73px;
+}
+
+.portfolio-page-header {
+    font-size: 35px;
+    padding-top: 73px;
+}
+
+.page-box {
+    background-color: rgb(243, 243, 243);
+    position: relative;
+    z-index: -1;
+    box-shadow: 15px -15px 0px rgb(194, 164, 164);
+    /* rgb(1, 63, 63); green */
+    /* rgb(235, 94, 51); coral */
+    /* rgb(187, 163, 27); gold */
+}
+
+.text-box {
+    color: rgb(39, 39, 39);
+    font-size: 20px;
+    padding: 170px 100px 100px 100px;
+    font-family: 'Yantramanav', sans-serif;
+}
+
+/* About page */
+.about-img {
+    width: 280px;
+    display: inline;
+    float: left;
+    margin-right: 50px;
+    box-shadow: 3px 3px 5px gray;
+}
+
+.about-p {
+    display: inline;
+}
+
+/* Portfolio page */
+.portfolio-card {
+    margin: 20px 20px 40px 20px;
+    box-shadow: 3px 3px 5px grey;
+    cursor: pointer;
+}
+
+.portfolio-card:hover {
+    filter: grayscale(100%);
+}
+  
+.portfolio-card-title {
+    position: absolute;
+    bottom: 5px;
+    z-index: 1;
+    background: rgb(39, 39, 39, 0.5);
+    padding: 10px 20px 10px 40px;
+    color: white;
+    text-align: center;
+    padding: 10px 15px 10px 15px;
+    width: 19rem;
+    height: 45px;
+}
+
+/* Contact page */
+
+.contact-form-box {
+    margin-top: -5px;
+}
+
+.contact-btn {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    margin: 30px;
+}
+
+.contact-box {
+    background-color: rgb(194, 164, 164);
+    width: 260px;
+    height: 400px;
+    padding-top: 30px;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.contact-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: rgb(39, 39, 39);
+    margin: 5px;
+    font-size: 20px;
+    padding-bottom: 0px;
+}
+
+.contact-info {
+    font-family: 'Yantramanav', sans-serif;
+    color: white;
+    margin: 5px;
+    margin-top: -10px;
+}
+
+.fa-contact {
+    color: rgb(39, 39, 39);
+    padding: 5px;
+    width: 30px;
+    margin-top: 30px;
+}
+
+/* Footer */
+.footer {
+    height: 60px;
+    color: white;
+    margin-top: 70px;
+    background-color: rgb(39, 39, 39);
+    box-shadow: 0px -2px 5px lightgray;
+}
+
+.fa-footer {
+    color: white;
+    padding: 5px;
+    bottom: 20px;
 }
